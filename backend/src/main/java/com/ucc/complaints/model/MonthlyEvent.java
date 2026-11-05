@@ -15,4 +15,15 @@ public class MonthlyEvent {
     private LocalDate eventMonth;
     private OffsetDateTime occurredAt;
     protected MonthlyEvent() { }
+    public MonthlyEvent(Complaint complaint, String eventType, LocalDate eventMonth,
+                        OffsetDateTime occurredAt) {
+        this.complaint = complaint;
+        this.eventType = eventType;
+        this.eventMonth = eventMonth;
+        this.occurredAt = occurredAt;
+    }
+    public String getEventType() { return eventType; }
+    public Complaint getComplaint() { return complaint; }
+    public LocalDate getEventMonth() { return eventMonth; }
+    public OffsetDateTime getOccurredAt() { return occurredAt; }
 }

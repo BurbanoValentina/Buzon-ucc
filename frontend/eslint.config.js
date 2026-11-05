@@ -8,7 +8,20 @@ export default [
   {
     files: ['**/*.{js,jsx}'],
     plugins: { 'react-hooks': reactHooks, 'react-refresh': reactRefresh },
-    languageOptions: { ecmaVersion: 'latest', sourceType: 'module', globals: { window: 'readonly', document: 'readonly', fetch: 'readonly' } },
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      parserOptions: { ecmaFeatures: { jsx: true } },
+      globals: {
+        window: 'readonly', document: 'readonly', fetch: 'readonly',
+        FormData: 'readonly', Blob: 'readonly', URL: 'readonly',
+        URLSearchParams: 'readonly'
+      }
+    },
     rules: { 'no-console': 'warn', 'react-refresh/only-export-components': 'warn' }
+  },
+  {
+    files: ['**/*.jsx'],
+    rules: { 'no-unused-vars': 'off' }
   }
 ];

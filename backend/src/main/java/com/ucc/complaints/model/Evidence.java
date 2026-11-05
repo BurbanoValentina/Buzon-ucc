@@ -19,4 +19,5 @@ public class Evidence {
     @Column(name = "drive_file_id", nullable = false)
     private String driveFileId;
     protected Evidence() { }
+    public String getDriveFileId() { return driveFileId; }
 }

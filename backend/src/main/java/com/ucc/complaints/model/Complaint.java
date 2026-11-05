@@ -25,6 +25,16 @@ public class Complaint {
     @Column(name = "completed_at")
     private OffsetDateTime completedAt;
     protected Complaint() { }
+    public Complaint(String publicId, boolean anonymous, String category, String subject,
+                     String description, OffsetDateTime registeredAt) {
+        this.publicId = publicId;
+        this.anonymous = anonymous;
+        this.category = category;
+        this.subject = subject;
+        this.description = description;
+        this.status = ComplaintStatus.PENDIENTE;
+        this.registeredAt = registeredAt;
+    }
     public Long getId() { return id; }
     public String getPublicId() { return publicId; }
     public void setPublicId(String publicId) { this.publicId = publicId; }
@@ -43,7 +53,9 @@ public class Complaint {
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
     public ComplaintStatus getStatus() { return status; }
+    public void setStatus(ComplaintStatus status) { this.status = status; }
     public OffsetDateTime getRegisteredAt() { return registeredAt; }
     public void setRegisteredAt(OffsetDateTime registeredAt) { this.registeredAt = registeredAt; }
     public OffsetDateTime getCompletedAt() { return completedAt; }
+    public void setCompletedAt(OffsetDateTime completedAt) { this.completedAt = completedAt; }
 }

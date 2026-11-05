@@ -11,7 +11,6 @@ public class AuditEntry {
     private String eventType;
     private String actor;
     private OffsetDateTime occurredAt;
-    @Column(columnDefinition = "jsonb")
     private String metadata;
     public AuditEntry() { }
     public void setEventType(String eventType) { this.eventType = eventType; }

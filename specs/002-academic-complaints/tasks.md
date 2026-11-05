@@ -58,23 +58,23 @@ sin requerir cuenta del estudiante.
 
 ### Tests for User Story 1
 
-- [ ] T019 [P] [US1] Crear pruebas Vitest en `frontend/src/features/complaints/PublicComplaintForm.test.jsx` para anonimato, identidad condicional, las 11 categorías y el campo número visible solo en Laboratorio y Aulas.
-- [ ] T020 [P] [US1] Crear pruebas Vitest en `frontend/src/features/complaints/complaintValidation.test.js` para número de máximo 50 caracteres, asunto de 5–200, descripción de 20–500 y contadores visibles.
-- [ ] T021 [P] [US1] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/publicapi/PublicComplaintControllerTest.java` para campos obligatorios, selección anónima/identificada y rechazo de identidad en envíos anónimos.
+- [X] T019 [P] [US1] Crear pruebas Vitest en `frontend/src/features/complaints/PublicComplaintForm.test.jsx` para anonimato, identidad condicional, las 11 categorías y el campo número visible solo en Laboratorio y Aulas.
+- [X] T020 [P] [US1] Crear pruebas Vitest en `frontend/src/features/complaints/complaintValidation.test.js` para número de máximo 50 caracteres, asunto de 5–200, descripción de 20–500 y contadores visibles.
+- [X] T021 [P] [US1] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/publicapi/PublicComplaintControllerTest.java` para campos obligatorios, selección anónima/identificada y rechazo de identidad en envíos anónimos.
 - [ ] T022 [P] [US1] Crear pruebas de integración Testcontainers en `backend/src/test/java/com/ucc/complaints/complaint/ComplaintPersistenceIT.java` para estado inicial `Pendiente`, identificador automático y ausencia de identidad anónima.
-- [ ] T023 [P] [US1] Crear pruebas de límites de evidencia en `backend/src/test/java/com/ucc/complaints/evidence/EvidenceValidationTest.java` para JPG/JPEG/PNG, máximo 5 imágenes y máximo 100 MB por imagen.
-- [ ] T024 [P] [US1] Crear pruebas de privacidad en `backend/src/test/java/com/ucc/complaints/evidence/ImageMetadataSanitizerTest.java` para eliminar o anonimizar metadatos antes del almacenamiento.
+- [X] T023 [P] [US1] Crear pruebas de límites de evidencia en `backend/src/test/java/com/ucc/complaints/evidence/EvidenceValidationTest.java` para JPG/JPEG/PNG, máximo 5 imágenes y máximo 100 MB por imagen.
+- [X] T024 [P] [US1] Crear pruebas de privacidad en `backend/src/test/java/com/ucc/complaints/evidence/ImageMetadataSanitizerTest.java` para eliminar o anonimizar metadatos antes del almacenamiento.
 
 ### Implementation for User Story 1
 
-- [ ] T025 [P] [US1] Crear DTOs y validadores en `backend/src/main/java/com/ucc/complaints/dto/publiccomplaint/` para usuario, identidad condicional, categoría, número, asunto, descripción, privacidad y evidencia.
-- [ ] T026 [P] [US1] Crear `ImageMetadataSanitizer` en `backend/src/main/java/com/ucc/complaints/storage/ImageMetadataSanitizer.java` para limpiar o reemplazar metadatos antes de cualquier subida.
-- [ ] T027 [US1] Crear `GoogleDriveEvidenceStorage` en `backend/src/main/java/com/ucc/complaints/storage/GoogleDriveEvidenceStorage.java` para carpetas/archivos `ID-FECHA-CATEGORIA`, acceso exclusivo del administrador y referencias persistibles.
-- [ ] T028 [US1] Crear `ComplaintService` en `backend/src/main/java/com/ucc/complaints/service/ComplaintService.java` para validar reglas, eliminar identidad anónima, persistir `Pendiente`, sanitizar evidencia y coordinar Drive.
-- [ ] T029 [US1] Crear `PublicComplaintController` en `backend/src/main/java/com/ucc/complaints/controller/PublicComplaintController.java` con `GET /api/v1/public/form-options` y `POST /api/v1/public/complaints`.
-- [ ] T030 [US1] Crear componentes mobile-first en `frontend/src/features/complaints/PublicComplaintForm.jsx`, `frontend/src/features/complaints/PrivacyNotice.jsx` y `frontend/src/features/complaints/EvidenceUploader.jsx`.
-- [ ] T031 [US1] Implementar mensajes claros, estados de carga/error/confirmación, contadores y controles de accesibilidad en `frontend/src/features/complaints/`.
-- [ ] T032 [US1] Integrar el envío público y carga de imágenes mediante `frontend/src/services/complaintsApi.js`, sin enviar datos de Telegram ni iniciar sesión del estudiante.
+- [X] T025 [P] [US1] Crear DTOs y validadores en `backend/src/main/java/com/ucc/complaints/dto/publiccomplaint/` para usuario, identidad condicional, categoría, número, asunto, descripción, privacidad y evidencia.
+- [X] T026 [P] [US1] Crear `ImageMetadataSanitizer` en `backend/src/main/java/com/ucc/complaints/storage/ImageMetadataSanitizer.java` para limpiar o reemplazar metadatos antes de cualquier subida.
+- [X] T027 [US1] Crear `GoogleDriveEvidenceStorage` en `backend/src/main/java/com/ucc/complaints/storage/GoogleDriveEvidenceStorage.java` para carpetas/archivos `ID-FECHA-CATEGORIA`, acceso exclusivo del administrador y referencias persistibles.
+- [X] T028 [US1] Crear `ComplaintService` en `backend/src/main/java/com/ucc/complaints/service/ComplaintService.java` para validar reglas, eliminar identidad anónima, persistir `Pendiente`, sanitizar evidencia y coordinar Drive.
+- [X] T029 [US1] Crear `PublicComplaintController` en `backend/src/main/java/com/ucc/complaints/controller/PublicComplaintController.java` con `GET /api/v1/public/form-options` y `POST /api/v1/public/complaints`.
+- [X] T030 [US1] Crear componentes mobile-first en `frontend/src/features/complaints/PublicComplaintForm.jsx`, `frontend/src/features/complaints/PrivacyNotice.jsx` y `frontend/src/features/complaints/EvidenceUploader.jsx`.
+- [X] T031 [US1] Implementar mensajes claros, estados de carga/error/confirmación, contadores y controles de accesibilidad en `frontend/src/features/complaints/`.
+- [X] T032 [US1] Integrar el envío público y carga de imágenes mediante `frontend/src/services/complaintsApi.js`, sin enviar datos de Telegram ni iniciar sesión del estudiante.
 
 **Checkpoint**: El MVP del formulario público debe ser demostrable y testeable
 de forma independiente antes de iniciar las historias administrativas.
@@ -89,18 +89,18 @@ queja y descarga un Excel con exactamente el conjunto y columnas solicitadas.
 
 ### Tests for User Story 2
 
-- [ ] T033 [P] [US2] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/admin/ComplaintQueryControllerTest.java` para filtros por fecha, categoría, estado y tipo de usuario, y rechazo sin autenticación.
-- [ ] T034 [P] [US2] Crear pruebas de exportación en `backend/src/test/java/com/ucc/complaints/export/ExcelExportServiceTest.java` para columnas, identidad solo cuando corresponde, enlaces Drive y conjunto filtrado.
-- [ ] T035 [P] [US2] Crear prueba de auditoría en `backend/src/test/java/com/ucc/complaints/audit/DownloadAuditTest.java` para usuario, fecha y hora de cada descarga sin contenido de quejas.
+- [X] T033 [P] [US2] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/admin/ComplaintQueryControllerTest.java` para filtros por fecha, categoría, estado y tipo de usuario, y rechazo sin autenticación.
+- [X] T034 [P] [US2] Crear pruebas de exportación en `backend/src/test/java/com/ucc/complaints/export/ExcelExportServiceTest.java` para columnas, identidad solo cuando corresponde, enlaces Drive y conjunto filtrado.
+- [X] T035 [P] [US2] Crear prueba de auditoría en `backend/src/test/java/com/ucc/complaints/audit/DownloadAuditTest.java` para usuario, fecha y hora de cada descarga sin contenido de quejas.
 
 ### Implementation for User Story 2
 
-- [ ] T036 [P] [US2] Crear DTOs y especificaciones de filtros en `backend/src/main/java/com/ucc/complaints/dto/admin/` y `backend/src/main/java/com/ucc/complaints/repository/ComplaintSpecifications.java`.
-- [ ] T037 [US2] Implementar consulta y detalle administrador en `backend/src/main/java/com/ucc/complaints/service/ComplaintQueryService.java`, incluyendo referencias de evidencia y campos identificados protegidos.
-- [ ] T038 [US2] Implementar `ExcelExportService` en `backend/src/main/java/com/ucc/complaints/service/ExcelExportService.java` con Apache POI, columnas del spec y auditoría.
-- [ ] T039 [US2] Crear `AdminComplaintController` en `backend/src/main/java/com/ucc/complaints/controller/AdminComplaintController.java` para listado, detalle y `export.xlsx`.
-- [ ] T040 [US2] Crear páginas y componentes en `frontend/src/features/admin/complaints/` para tabla responsive, filtros, detalle y enlaces de evidencia.
-- [ ] T041 [US2] Crear cliente de listado y descarga en `frontend/src/services/adminComplaintsApi.js`, con estados de carga, error y descarga filtrada.
+- [X] T036 [P] [US2] Crear DTOs y especificaciones de filtros en `backend/src/main/java/com/ucc/complaints/dto/admin/` y `backend/src/main/java/com/ucc/complaints/repository/ComplaintSpecifications.java`.
+- [X] T037 [US2] Implementar consulta y detalle administrador en `backend/src/main/java/com/ucc/complaints/service/ComplaintQueryService.java`, incluyendo referencias de evidencia y campos identificados protegidos.
+- [X] T038 [US2] Implementar `ExcelExportService` en `backend/src/main/java/com/ucc/complaints/service/ExcelExportService.java` con Apache POI, columnas del spec y auditoría.
+- [X] T039 [US2] Crear `AdminComplaintController` en `backend/src/main/java/com/ucc/complaints/controller/AdminComplaintController.java` para listado, detalle y `export.xlsx`.
+- [X] T040 [US2] Crear páginas y componentes en `frontend/src/features/admin/complaints/` para tabla responsive, filtros, detalle y enlaces de evidencia.
+- [X] T041 [US2] Crear cliente de listado y descarga en `frontend/src/services/adminComplaintsApi.js`, con estados de carga, error y descarga filtrada.
 
 ## Phase 5: User Story 5 - Gestionar cumplimiento y seguimiento mensual (Priority: P1)
 
@@ -112,18 +112,18 @@ recibe rechazo sin texto obligatorio y consulta el historial mensual completo.
 
 ### Tests for User Story 5
 
-- [ ] T042 [P] [US5] Crear pruebas de transición en `backend/src/test/java/com/ucc/complaints/status/ComplaintStatusServiceTest.java` para `Pendiente`, `Completada`, `No completada`, reapertura y re-finalización.
-- [ ] T043 [P] [US5] Crear pruebas de validación en `backend/src/test/java/com/ucc/complaints/status/StatusCommentValidationTest.java` para comentario de gestión, observación de reapertura y conclusión final obligatorios.
-- [ ] T044 [P] [US5] Crear pruebas de inmutabilidad en `backend/src/test/java/com/ucc/complaints/status/CompletionDateImmutabilityTest.java` para fechas automáticas, anteriores y eventos mensuales conservados.
-- [ ] T045 [P] [US5] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/status/StatusControllerTest.java` para autenticación, transiciones inválidas y auditoría de usuario/fecha/hora.
+- [X] T042 [P] [US5] Crear pruebas de transición en `backend/src/test/java/com/ucc/complaints/status/ComplaintStatusServiceTest.java` para `Pendiente`, `Completada`, `No completada`, reapertura y re-finalización.
+- [X] T043 [P] [US5] Crear pruebas de validación en `backend/src/test/java/com/ucc/complaints/status/StatusCommentValidationTest.java` para comentario de gestión, observación de reapertura y conclusión final obligatorios.
+- [X] T044 [P] [US5] Crear pruebas de inmutabilidad en `backend/src/test/java/com/ucc/complaints/status/CompletionDateImmutabilityTest.java` para fechas automáticas, anteriores y eventos mensuales conservados.
+- [X] T045 [P] [US5] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/status/StatusControllerTest.java` para autenticación, transiciones inválidas y auditoría de usuario/fecha/hora.
 
 ### Implementation for User Story 5
 
-- [ ] T046 [P] [US5] Crear DTOs de transición e historial en `backend/src/main/java/com/ucc/complaints/dto/status/`.
-- [ ] T047 [US5] Implementar `ComplaintStatusService` en `backend/src/main/java/com/ucc/complaints/service/ComplaintStatusService.java` con reglas de transición, comentarios, fechas automáticas e historial inmutable.
-- [ ] T048 [US5] Implementar seguimiento mensual en `backend/src/main/java/com/ucc/complaints/service/MonthlyFollowUpService.java` con mes de primera finalización, reapertura y nueva finalización.
-- [ ] T049 [US5] Crear endpoints `PATCH /api/v1/admin/complaints/{id}/status` y `GET /api/v1/admin/follow-up/months` en `backend/src/main/java/com/ucc/complaints/controller/StatusController.java`.
-- [ ] T050 [US5] Crear componentes de estado, comentarios, historial y resumen mensual en `frontend/src/features/admin/status/`.
+- [X] T046 [P] [US5] Crear DTOs de transición e historial en `backend/src/main/java/com/ucc/complaints/dto/status/`.
+- [X] T047 [US5] Implementar `ComplaintStatusService` en `backend/src/main/java/com/ucc/complaints/service/ComplaintStatusService.java` con reglas de transición, comentarios, fechas automáticas e historial inmutable.
+- [X] T048 [US5] Implementar seguimiento mensual en `backend/src/main/java/com/ucc/complaints/service/MonthlyFollowUpService.java` con mes de primera finalización, reapertura y nueva finalización.
+- [X] T049 [US5] Crear endpoints `PATCH /api/v1/admin/complaints/{id}/status` y `GET /api/v1/admin/follow-up/months` en `backend/src/main/java/com/ucc/complaints/controller/StatusController.java`.
+- [X] T050 [US5] Crear componentes de estado, comentarios, historial y resumen mensual en `frontend/src/features/admin/status/`.
 
 ## Phase 6: User Story 6 - Acceder y administrar la cuenta (Priority: P1)
 
@@ -135,17 +135,17 @@ credenciales, tres fallos consecutivos, lockout y expiración por inactividad.
 
 ### Tests for User Story 6
 
-- [ ] T051 [P] [US6] Crear pruebas de seguridad en `backend/src/test/java/com/ucc/complaints/security/AdminAuthenticationTest.java` para único administrador, sin registro, acceso por logo y protección de rutas.
-- [ ] T052 [P] [US6] Crear pruebas de lockout en `backend/src/test/java/com/ucc/complaints/security/AccountLockoutTest.java` para tres fallos consecutivos y bloqueo de 24 horas en login y pregunta clave.
-- [ ] T053 [P] [US6] Crear prueba de sesión en `backend/src/test/java/com/ucc/complaints/security/InactivityTimeoutTest.java` para cierre automático después de 10 horas.
-- [ ] T054 [P] [US6] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/security/AdminAccountControllerTest.java` para pregunta `¿Qué representante eres?`, formatos `administrator` más período y `RepresentanteIng` más año, y cambios auditados.
+- [X] T051 [P] [US6] Crear pruebas de seguridad en `backend/src/test/java/com/ucc/complaints/security/AdminAuthenticationTest.java` para único administrador, sin registro, acceso por logo y protección de rutas.
+- [X] T052 [P] [US6] Crear pruebas de lockout en `backend/src/test/java/com/ucc/complaints/security/AccountLockoutTest.java` para tres fallos consecutivos y bloqueo de 24 horas en login y pregunta clave.
+- [X] T053 [P] [US6] Crear prueba de sesión en `backend/src/test/java/com/ucc/complaints/security/InactivityTimeoutTest.java` para cierre automático después de 10 horas.
+- [X] T054 [P] [US6] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/security/AdminAccountControllerTest.java` para pregunta `¿Qué representante eres?`, formatos `administrator` más período y `RepresentanteIng` más año, y cambios auditados.
 
 ### Implementation for User Story 6
 
-- [ ] T055 [US6] Implementar `AdminAuthenticationService` en `backend/src/main/java/com/ucc/complaints/security/AdminAuthenticationService.java` con hash de contraseña, lockout, recuperación y límites de sesión.
-- [ ] T056 [US6] Crear `AdminSessionController` y `AdminAccountController` en `backend/src/main/java/com/ucc/complaints/controller/` para login, logout, pregunta y configuración.
-- [ ] T057 [US6] Crear interfaz de configuración de administrador en `frontend/src/features/admin/account/` con entrada oculta desde logo, sin registro, mensajes de bloqueo y expiración.
-- [ ] T058 [US6] Integrar cliente de sesión y cuenta en `frontend/src/services/adminAuthApi.js`, sin credenciales iniciales en código, documentación o repositorio.
+- [X] T055 [US6] Implementar `AdminAuthenticationService` en `backend/src/main/java/com/ucc/complaints/security/AdminAuthenticationService.java` con hash de contraseña, lockout, recuperación y límites de sesión.
+- [X] T056 [US6] Crear `AdminSessionController` y `AdminAccountController` en `backend/src/main/java/com/ucc/complaints/controller/` para login, logout, pregunta y configuración.
+- [X] T057 [US6] Crear interfaz de configuración de administrador en `frontend/src/features/admin/account/` con entrada oculta desde logo, sin registro, mensajes de bloqueo y expiración.
+- [X] T058 [US6] Integrar cliente de sesión y cuenta en `frontend/src/services/adminAuthApi.js`, sin credenciales iniciales en código, documentación o repositorio.
 
 ## Phase 7: User Story 4 - Analizar estadísticas y predicciones (Priority: P2)
 

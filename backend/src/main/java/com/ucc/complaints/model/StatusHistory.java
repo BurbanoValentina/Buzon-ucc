@@ -17,4 +17,19 @@ public class StatusHistory {
     private String changedBy;
     private OffsetDateTime changedAt;
     protected StatusHistory() { }
+    public StatusHistory(Complaint complaint, ComplaintStatus previousStatus,
+                        ComplaintStatus newStatus, String comment, String changedBy,
+                        OffsetDateTime changedAt) {
+        this.complaint = complaint;
+        this.previousStatus = previousStatus == null ? null : previousStatus.name();
+        this.newStatus = newStatus.name();
+        this.comment = comment;
+        this.changedBy = changedBy;
+        this.changedAt = changedAt;
+    }
+    public String getPreviousStatus() { return previousStatus; }
+    public String getNewStatus() { return newStatus; }
+    public String getComment() { return comment; }
+    public String getChangedBy() { return changedBy; }
+    public OffsetDateTime getChangedAt() { return changedAt; }
 }
