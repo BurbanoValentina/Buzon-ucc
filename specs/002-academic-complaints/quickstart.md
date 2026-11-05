@@ -65,3 +65,14 @@
   success, then verify the app health endpoint.
 - Optional SonarCloud analysis may provide additional findings but is not a
   substitute for required checks.
+
+## Última validación ejecutada
+
+- Frontend: `npm ci`, ESLint, Vitest y Vite build completaron correctamente.
+- Vitest: 4 archivos y 9 pruebas aprobadas.
+- Docker Compose: `docker compose -f infra/compose.yaml config` completó correctamente.
+- Backend: Maven `verify` compiló las fuentes principales y las pruebas tras una
+  corrección de compilación; la ejecución en contenedor terminó con fallos de
+  integración, contexto Spring, privacidad de metadatos, exportación y Telegram.
+  No se debe afirmar que estos módulos están validados hasta corregir y repetir
+  el build completo.

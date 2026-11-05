@@ -157,16 +157,16 @@ predicciones total/categoría únicamente al cumplir el umbral.
 
 ### Tests for User Story 4
 
-- [ ] T059 [P] [US4] Crear pruebas de agregación en `backend/src/test/java/com/ucc/complaints/dashboard/DashboardServiceTest.java` para totales, categorías, estados, proporciones, semanas, meses y gráficas vacías.
-- [ ] T060 [P] [US4] Crear pruebas de umbral en `backend/src/test/java/com/ucc/complaints/dashboard/PredictionThresholdTest.java` para menos de 5 y al menos 5 quejas por categoría y total.
-- [ ] T061 [P] [US4] Crear pruebas de privacidad IA en `backend/src/test/java/com/ucc/complaints/ai/AiPrivacyBoundaryTest.java` para que nombre, semestre e imágenes nunca se incluyan en solicitudes.
+- [X] T059 [P] [US4] Crear pruebas de agregación en `backend/src/test/java/com/ucc/complaints/dashboard/DashboardServiceTest.java` para totales, categorías, estados, proporciones, semanas, meses y gráficas vacías.
+- [X] T060 [P] [US4] Crear pruebas de umbral en `backend/src/test/java/com/ucc/complaints/dashboard/PredictionThresholdTest.java` para menos de 5 y al menos 5 quejas por categoría y total.
+- [X] T061 [P] [US4] Crear pruebas de privacidad IA en `backend/src/test/java/com/ucc/complaints/ai/AiPrivacyBoundaryTest.java` para que nombre, semestre e imágenes nunca se incluyan en solicitudes.
 
 ### Implementation for User Story 4
 
-- [ ] T062 [P] [US4] Crear `AiAnalysisProvider`, `SimulationAiAnalysisProvider` y DTOs en `backend/src/main/java/com/ucc/complaints/ai/`, validando propuestas y estimaciones.
-- [ ] T063 [US4] Implementar agregados y umbral de predicción en `backend/src/main/java/com/ucc/complaints/service/DashboardService.java`.
-- [ ] T064 [US4] Crear `DashboardController` en `backend/src/main/java/com/ucc/complaints/controller/DashboardController.java` con acceso exclusivo del administrador.
-- [ ] T065 [US4] Crear dashboard responsive con Recharts en `frontend/src/features/admin/dashboard/`, separando datos reales, estimaciones y meses vacíos.
+- [X] T062 [P] [US4] Crear `AiAnalysisProvider`, `SimulationAiAnalysisProvider` y DTOs en `backend/src/main/java/com/ucc/complaints/ai/`, validando propuestas y estimaciones.
+- [X] T063 [US4] Implementar agregados y umbral de predicción en `backend/src/main/java/com/ucc/complaints/service/DashboardService.java`.
+- [X] T064 [US4] Crear `DashboardController` en `backend/src/main/java/com/ucc/complaints/controller/DashboardController.java` con acceso exclusivo del administrador.
+- [X] T065 [US4] Crear dashboard responsive con Recharts en `frontend/src/features/admin/dashboard/`, separando datos reales, estimaciones y meses vacíos.
 
 ## Phase 8: User Story 3 - Generar reportes editables (Priority: P2)
 
@@ -178,16 +178,16 @@ lo edita en la página y descarga la versión editada con auditoría.
 
 ### Tests for User Story 3
 
-- [ ] T066 [P] [US3] Crear pruebas de selección y privacidad en `backend/src/test/java/com/ucc/complaints/report/WordReportServiceTest.java` para selección individual/categoría y exclusión de identidad/imágenes del prompt IA.
-- [ ] T067 [P] [US3] Crear pruebas Apache POI en `backend/src/test/java/com/ucc/complaints/report/WordDocumentTest.java` para las siete secciones, portada `Reporte`, fecha de descarga, ausencia de logo, edición y evidencia insertada.
-- [ ] T068 [P] [US3] Crear prueba de auditoría en `backend/src/test/java/com/ucc/complaints/report/ReportAuditTest.java` para generación y descarga sin contenido sensible en auditoría.
+- [X] T066 [P] [US3] Crear pruebas de selección y privacidad en `backend/src/test/java/com/ucc/complaints/report/WordReportServiceTest.java` para selección individual/categoría y exclusión de identidad/imágenes del prompt IA.
+- [X] T067 [P] [US3] Crear pruebas Apache POI en `backend/src/test/java/com/ucc/complaints/report/WordDocumentTest.java` para las siete secciones, portada `Reporte`, fecha de descarga, ausencia de logo, edición y evidencia insertada.
+- [X] T068 [P] [US3] Crear prueba de auditoría en `backend/src/test/java/com/ucc/complaints/report/ReportAuditTest.java` para generación y descarga sin contenido sensible en auditoría.
 
 ### Implementation for User Story 3
 
-- [ ] T069 [P] [US3] Crear DTO y persistencia de `WordReportDraft` en `backend/src/main/java/com/ucc/complaints/dto/report/` y `backend/src/main/java/com/ucc/complaints/repository/WordReportDraftRepository.java`.
-- [ ] T070 [US3] Implementar `WordReportService` en `backend/src/main/java/com/ucc/complaints/service/WordReportService.java` para siete secciones, propuestas IA, edición y evidencia local.
-- [ ] T071 [US3] Crear `WordReportController` en `backend/src/main/java/com/ucc/complaints/controller/WordReportController.java` con creación, edición y descarga.
-- [ ] T072 [US3] Crear editor de borrador y descarga en `frontend/src/features/admin/reports/`, con nombres/semestres visibles solo al administrador.
+- [X] T069 [P] [US3] Crear DTO y persistencia de `WordReportDraft` en `backend/src/main/java/com/ucc/complaints/dto/report/` y `backend/src/main/java/com/ucc/complaints/repository/WordReportDraftRepository.java`.
+- [X] T070 [US3] Implementar `WordReportService` en `backend/src/main/java/com/ucc/complaints/service/WordReportService.java` para siete secciones, propuestas IA, edición y evidencia local.
+- [X] T071 [US3] Crear `WordReportController` en `backend/src/main/java/com/ucc/complaints/controller/WordReportController.java` con creación, edición y descarga.
+- [X] T072 [US3] Crear editor de borrador y descarga en `frontend/src/features/admin/reports/`, con nombres/semestres visibles solo al administrador.
 
 ## Phase 9: User Story 7 - Usar Telegram de forma segura (Priority: P1)
 
@@ -199,37 +199,37 @@ segundos, fallback tras tres errores, avisos, comandos y fallo del proveedor.
 
 ### Tests for User Story 7
 
-- [ ] T073 [P] [US7] Crear pruebas de webhook en `backend/src/test/java/com/ucc/complaints/telegram/TelegramWebhookControllerTest.java` para secreto válido, secreto inválido, cuenta vinculada y cuenta no vinculada.
-- [ ] T074 [P] [US7] Crear pruebas de códigos en `backend/src/test/java/com/ucc/complaints/telegram/TelegramChallengeServiceTest.java` para vinculación de 10 minutos, OTP de 15 segundos, un solo uso, hash/cifrado y ausencia en logs.
-- [ ] T075 [P] [US7] Crear pruebas de fallback en `backend/src/test/java/com/ucc/complaints/telegram/TelegramLoginFallbackTest.java` para pregunta clave tras tres códigos incorrectos y bloqueo tras tres respuestas incorrectas.
-- [ ] T076 [P] [US7] Crear pruebas de privacidad en `backend/src/test/java/com/ucc/complaints/telegram/TelegramPrivacyTest.java` para excluir identidad, asunto, descripción, imágenes, contraseñas y respuestas de seguridad.
-- [ ] T077 [P] [US7] Crear pruebas de comandos y avisos en `backend/src/test/java/com/ucc/complaints/telegram/TelegramCommandServiceTest.java` para Ayuda, Resumen, Pendientes, Mes, aviso configurable y operaciones solo lectura.
-- [ ] T078 [P] [US7] Crear prueba de resiliencia en `backend/src/test/java/com/ucc/complaints/telegram/TelegramFailureIsolationTest.java` para que la indisponibilidad de Telegram no impida registrar una queja.
+- [X] T073 [P] [US7] Crear pruebas de webhook en `backend/src/test/java/com/ucc/complaints/telegram/TelegramWebhookControllerTest.java` para secreto válido, secreto inválido, cuenta vinculada y cuenta no vinculada.
+- [X] T074 [P] [US7] Crear pruebas de códigos en `backend/src/test/java/com/ucc/complaints/telegram/TelegramChallengeServiceTest.java` para vinculación de 10 minutos, OTP de 15 segundos, un solo uso, hash/cifrado y ausencia en logs.
+- [X] T075 [P] [US7] Crear pruebas de fallback en `backend/src/test/java/com/ucc/complaints/telegram/TelegramLoginFallbackTest.java` para pregunta clave tras tres códigos incorrectos y bloqueo tras tres respuestas incorrectas.
+- [X] T076 [P] [US7] Crear pruebas de privacidad en `backend/src/test/java/com/ucc/complaints/telegram/TelegramPrivacyTest.java` para excluir identidad, asunto, descripción, imágenes, contraseñas y respuestas de seguridad.
+- [X] T077 [P] [US7] Crear pruebas de comandos y avisos en `backend/src/test/java/com/ucc/complaints/telegram/TelegramCommandServiceTest.java` para Ayuda, Resumen, Pendientes, Mes, aviso configurable y operaciones solo lectura.
+- [X] T078 [P] [US7] Crear prueba de resiliencia en `backend/src/test/java/com/ucc/complaints/telegram/TelegramFailureIsolationTest.java` para que la indisponibilidad de Telegram no impida registrar una queja.
 
 ### Implementation for User Story 7
 
-- [ ] T079 [P] [US7] Crear `TelegramClient`, `TelegramChallengeService` y DTOs en `backend/src/main/java/com/ucc/complaints/telegram/`, con webhook secret, modo long polling de desarrollo y códigos protegidos.
-- [ ] T080 [US7] Implementar `TelegramLinkService` en `backend/src/main/java/com/ucc/complaints/service/TelegramLinkService.java` para una cuenta, reemplazo, desvinculación y preferencia de avisos.
-- [ ] T081 [US7] Implementar `TelegramNotificationService` en `backend/src/main/java/com/ucc/complaints/service/TelegramNotificationService.java` con payload mínimo y entrega desacoplada del registro.
-- [ ] T082 [US7] Implementar `TelegramCommandService` en `backend/src/main/java/com/ucc/complaints/service/TelegramCommandService.java` para Ayuda, Resumen, Pendientes y Mes, sin mutaciones ni descargas.
-- [ ] T083 [US7] Crear `TelegramWebhookController` y endpoints de administración en `backend/src/main/java/com/ucc/complaints/controller/TelegramController.java`.
-- [ ] T084 [US7] Integrar OTP, avisos y vínculo Telegram con autenticación y configuración en `backend/src/main/java/com/ucc/complaints/security/` y `backend/src/main/java/com/ucc/complaints/service/AuditService.java`.
-- [ ] T085 [US7] Crear configuración de Telegram en `frontend/src/features/admin/telegram/` para vincular, desvincular y activar/desactivar avisos sin mostrar secretos.
+- [X] T079 [P] [US7] Crear `TelegramClient`, `TelegramChallengeService` y DTOs en `backend/src/main/java/com/ucc/complaints/telegram/`, con webhook secret, modo long polling de desarrollo y códigos protegidos.
+- [X] T080 [US7] Implementar `TelegramLinkService` en `backend/src/main/java/com/ucc/complaints/service/TelegramLinkService.java` para una cuenta, reemplazo, desvinculación y preferencia de avisos.
+- [X] T081 [US7] Implementar `TelegramNotificationService` en `backend/src/main/java/com/ucc/complaints/service/TelegramNotificationService.java` con payload mínimo y entrega desacoplada del registro.
+- [X] T082 [US7] Implementar `TelegramCommandService` en `backend/src/main/java/com/ucc/complaints/service/TelegramCommandService.java` para Ayuda, Resumen, Pendientes y Mes, sin mutaciones ni descargas.
+- [X] T083 [US7] Crear `TelegramWebhookController` y endpoints de administración en `backend/src/main/java/com/ucc/complaints/controller/TelegramController.java`.
+- [X] T084 [US7] Integrar OTP, avisos y vínculo Telegram con autenticación y configuración en `backend/src/main/java/com/ucc/complaints/security/` y `backend/src/main/java/com/ucc/complaints/service/AuditService.java`.
+- [X] T085 [US7] Crear configuración de Telegram en `frontend/src/features/admin/telegram/` para vincular, desvincular y activar/desactivar avisos sin mostrar secretos.
 
 ## Phase 10: Polish & Cross-Cutting Concerns
 
 **Purpose**: Calidad, entrega, observabilidad, documentación y verificación
 transversal.
 
-- [ ] T086 [P] Configurar JaCoCo en `backend/pom.xml` con umbral mínimo de cobertura del 80% y fallo del build cuando no se alcance.
-- [ ] T087 [P] Configurar GitHub Actions en `.github/workflows/ci.yml` para Maven, Vitest, Checkstyle, SpotBugs/Find Security Bugs, ESLint, OWASP Dependency-Check, Testcontainers y artefactos de cobertura.
-- [ ] T088 [P] Crear Dockerfile multietapa en `infra/Dockerfile` para construir backend/frontend sin copiar `.env` ni secretos.
-- [ ] T089 [P] Crear `infra/compose.yaml` con aplicación, PostgreSQL y servicio de pruebas, usando variables de entorno externas.
-- [ ] T090 [P] Crear `.github/workflows/deploy.yml` separado de CI, condicionado al éxito de CI y con verificación de health/readiness posterior al despliegue.
-- [ ] T091 [P] Añadir métricas y health checks en `backend/src/main/java/com/ucc/complaints/config/ObservabilityConfig.java` para latencia, errores, lockouts, exports, Drive, IA y Telegram sin datos sensibles.
-- [ ] T092 [P] Añadir pruebas de rendimiento y accesibilidad en `backend/src/test/java/com/ucc/complaints/quality/PerformanceContractTest.java` y `frontend/src/test/accessibilityFlows.test.jsx` para 500 ms de validación, 2 s de consultas, 30 s de exportación y viewport de 320 px.
-- [ ] T093 Revisar `docs/README.md` y `README.md` contra `specs/002-academic-complaints/quickstart.md`, documentando configuración, comandos, simulación y límites sin credenciales.
-- [ ] T094 Ejecutar la validación completa de `specs/002-academic-complaints/quickstart.md` y registrar únicamente resultados realmente ejecutados.
+- [X] T086 [P] Configurar JaCoCo en `backend/pom.xml` con umbral mínimo de cobertura del 80% y fallo del build cuando no se alcance.
+- [X] T087 [P] Configurar GitHub Actions en `.github/workflows/ci.yml` para Maven, Vitest, Checkstyle, SpotBugs/Find Security Bugs, ESLint, OWASP Dependency-Check, Testcontainers y artefactos de cobertura.
+- [X] T088 [P] Crear Dockerfile multietapa en `infra/Dockerfile` para construir backend/frontend sin copiar `.env` ni secretos.
+- [X] T089 [P] Crear `infra/compose.yaml` con aplicación, PostgreSQL y servicio de pruebas, usando variables de entorno externas.
+- [X] T090 [P] Crear `.github/workflows/deploy.yml` separado de CI, condicionado al éxito de CI y con verificación de health/readiness posterior al despliegue.
+- [X] T091 [P] Añadir métricas y health checks en `backend/src/main/java/com/ucc/complaints/config/ObservabilityConfig.java` para latencia, errores, lockouts, exports, Drive, IA y Telegram sin datos sensibles.
+- [X] T092 [P] Añadir pruebas de rendimiento y accesibilidad en `backend/src/test/java/com/ucc/complaints/quality/PerformanceContractTest.java` y `frontend/src/test/accessibilityFlows.test.jsx` para 500 ms de validación, 2 s de consultas, 30 s de exportación y viewport de 320 px.
+- [X] T093 Revisar `docs/README.md` y `README.md` contra `specs/002-academic-complaints/quickstart.md`, documentando configuración, comandos, simulación y límites sin credenciales.
+- [X] T094 Ejecutar la validación completa de `specs/002-academic-complaints/quickstart.md` y registrar únicamente resultados realmente ejecutados.
 
 ## Dependencies & Execution Order
 

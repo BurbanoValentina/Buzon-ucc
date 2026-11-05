@@ -11,9 +11,12 @@ import java.util.List;
 @RequestMapping("/api/v1/public")
 public class PublicComplaintController {
     private final ComplaintService service;
+    private final TelegramNotificationService notificationService;
 
-    public PublicComplaintController(ComplaintService service) {
+    public PublicComplaintController(ComplaintService service,
+                                     TelegramNotificationService notificationService) {
         this.service = service;
+        this.notificationService = notificationService;
     }
 
     @GetMapping("/form-options")
@@ -26,6 +29,8 @@ public class PublicComplaintController {
     public PublicComplaintResponse create(
         @RequestPart("complaint") PublicComplaintRequest request,
         @RequestPart(value = "evidence", required = false) List<MultipartFile> evidence) {
-        return service.create(request, evidence);
+        PublicComplaintResponse response = service.create(request, evidence);
+        notificationService.notifyNewComplaint(response.complaintId(), request.category());
+        return response;
     }
 }

@@ -13,4 +13,21 @@ public class WordReportDraft {
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
     protected WordReportDraft() { }
+    public WordReportDraft(String title, String content) {
+        OffsetDateTime now = OffsetDateTime.now();
+        this.title = title;
+        this.content = content;
+        this.createdAt = now;
+        this.updatedAt = now;
+    }
+    public Long getId() { return id; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+    public String getContent() { return content; }
+    public void setContent(String content) {
+        this.content = content;
+        this.updatedAt = OffsetDateTime.now();
+    }
+    public OffsetDateTime getCreatedAt() { return createdAt; }
+    public OffsetDateTime getUpdatedAt() { return updatedAt; }
 }

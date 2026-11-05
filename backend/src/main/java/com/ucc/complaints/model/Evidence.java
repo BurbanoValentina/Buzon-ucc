@@ -18,6 +18,7 @@ public class Evidence {
     private long sizeBytes;
     @Column(name = "drive_file_id", nullable = false)
     private String driveFileId;
-    protected Evidence() { }
+    public Evidence() { }
     public String getDriveFileId() { return driveFileId; }
+    public String getFileName() { return fileName; }
 }

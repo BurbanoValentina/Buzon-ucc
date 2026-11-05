@@ -15,7 +15,7 @@ export default [
       globals: {
         window: 'readonly', document: 'readonly', fetch: 'readonly',
         FormData: 'readonly', Blob: 'readonly', URL: 'readonly',
-        URLSearchParams: 'readonly'
+        URLSearchParams: 'readonly', console: 'readonly'
       }
     },
     rules: { 'no-console': 'warn', 'react-refresh/only-export-components': 'warn' }

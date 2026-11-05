@@ -8,6 +8,8 @@ import com.ucc.complaints.service.ComplaintValidationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.ucc.complaints.telegram.TelegramChallengeService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.OffsetDateTime;
 import java.util.regex.Pattern;
@@ -24,6 +26,7 @@ public class AdminAuthenticationService {
     private final AdministratorAccountRepository accounts;
     private final PasswordEncoder passwordEncoder;
     private final AuditService auditService;
+    private final TelegramChallengeService challengeService;
 
     public AdminAuthenticationService(AdministratorAccountRepository accounts,
                                        PasswordEncoder passwordEncoder,
@@ -31,6 +34,35 @@ public class AdminAuthenticationService {
         this.accounts = accounts;
         this.passwordEncoder = passwordEncoder;
         this.auditService = auditService;
+        this.challengeService = null;
+    }
+
+    @Autowired
+    public AdminAuthenticationService(AdministratorAccountRepository accounts,
+                                       PasswordEncoder passwordEncoder,
+                                       AuditService auditService,
+                                       TelegramChallengeService challengeService) {
+        this.accounts = accounts;
+        this.passwordEncoder = passwordEncoder;
+        this.auditService = auditService;
+        this.challengeService = challengeService;
+    }
+
+    public String issueTelegramOtp(String accountId) {
+        if (challengeService == null) {
+            throw new ComplaintValidationException("Telegram no está configurado.");
+        }
+        String code = challengeService.issueLoginOtp("LOGIN", accountId);
+        auditService.record("TELEGRAM_LOGIN_OTP_ISSUED", "administrator");
+        return code;
+    }
+
+    public boolean validateTelegramOtp(String accountId, String code) {
+        if (challengeService == null) return false;
+        boolean valid = challengeService.validate("LOGIN", accountId, code);
+        auditService.record(valid ? "TELEGRAM_LOGIN_OTP_SUCCESS" : "TELEGRAM_LOGIN_OTP_FAILED",
+            "administrator");
+        return valid;
     }
 
     @Transactional
