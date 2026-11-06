@@ -33,6 +33,7 @@
         <dependency><groupId>com.google.apis</groupId><artifactId>google-api-services-drive</artifactId><version>v3-rev20261023-${google-api.version}</version></dependency>
         <dependency><groupId>org.telegram</groupId><artifactId>telegrambots</artifactId><version>${telegram.version}</version></dependency>
         <dependency><groupId>org.apache.poi</groupId><artifactId>poi-ooxml</artifactId><version>5.4.1</version></dependency>
+        <dependency><groupId>commons-io</groupId><artifactId>commons-io</artifactId><version>2.20.0</version></dependency>
         <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-test</artifactId><scope>test</scope></dependency>
         <dependency><groupId>org.testcontainers</groupId><artifactId>postgresql</artifactId><scope>test</scope></dependency>
         <dependency><groupId>org.testcontainers</groupId><artifactId>junit-jupiter</artifactId><scope>test</scope></dependency>

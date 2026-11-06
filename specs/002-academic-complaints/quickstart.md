@@ -68,6 +68,9 @@
 
 ## Última validación ejecutada
 
+- Frontend disponible en `http://localhost:5173` con respuesta HTTP 200.
+- El puerto 8080 está ocupado por `AgentService.exe`; por ello la comprobación
+  HTTP de Actuator no pudo completarse y el backend no quedó confirmado como activo.
 - Frontend: `npm ci`, ESLint, Vitest y Vite build completaron correctamente.
 - Vitest: 4 archivos y 9 pruebas aprobadas.
 - Docker Compose: `docker compose -f infra/compose.yaml config` completó correctamente.

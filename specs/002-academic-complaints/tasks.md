@@ -61,7 +61,7 @@ sin requerir cuenta del estudiante.
 - [X] T019 [P] [US1] Crear pruebas Vitest en `frontend/src/features/complaints/PublicComplaintForm.test.jsx` para anonimato, identidad condicional, las 11 categorías y el campo número visible solo en Laboratorio y Aulas.
 - [X] T020 [P] [US1] Crear pruebas Vitest en `frontend/src/features/complaints/complaintValidation.test.js` para número de máximo 50 caracteres, asunto de 5–200, descripción de 20–500 y contadores visibles.
 - [X] T021 [P] [US1] Crear pruebas MockMvc en `backend/src/test/java/com/ucc/complaints/publicapi/PublicComplaintControllerTest.java` para campos obligatorios, selección anónima/identificada y rechazo de identidad en envíos anónimos.
-- [ ] T022 [P] [US1] Crear pruebas de integración Testcontainers en `backend/src/test/java/com/ucc/complaints/complaint/ComplaintPersistenceIT.java` para estado inicial `Pendiente`, identificador automático y ausencia de identidad anónima.
+- [X] T022 [P] [US1] Crear pruebas de integración Testcontainers en `backend/src/test/java/com/ucc/complaints/complaint/ComplaintPersistenceIT.java` para estado inicial `Pendiente`, identificador automático y ausencia de identidad anónima.
 - [X] T023 [P] [US1] Crear pruebas de límites de evidencia en `backend/src/test/java/com/ucc/complaints/evidence/EvidenceValidationTest.java` para JPG/JPEG/PNG, máximo 5 imágenes y máximo 100 MB por imagen.
 - [X] T024 [P] [US1] Crear pruebas de privacidad en `backend/src/test/java/com/ucc/complaints/evidence/ImageMetadataSanitizerTest.java` para eliminar o anonimizar metadatos antes del almacenamiento.
 

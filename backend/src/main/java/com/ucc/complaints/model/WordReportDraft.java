@@ -1,6 +1,8 @@
 package com.ucc.complaints.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import java.time.OffsetDateTime;
 
 @Entity
@@ -9,7 +11,11 @@ public class WordReportDraft {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Lob private String content;
+
+    @JdbcTypeCode(SqlTypes.LONGVARCHAR)
+    @Column(columnDefinition = "text")
+    private String content;
+
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
     protected WordReportDraft() { }

@@ -19,12 +19,15 @@ public class TelegramCommandService {
     }
 
     public String execute(String accountId, String command) {
+        String normalized = command == null ? "" : command.trim().toLowerCase(Locale.ROOT);
+        if ("/ayuda".equals(normalized) || "ayuda".equals(normalized)) {
+            return "Comandos disponibles: Ayuda, Resumen, Pendientes, Mes. Solo lectura.";
+        }
         String hash = accountId == null ? "" : accountId;
         if (links.findFirstByActiveTrue().isEmpty()
             || !links.findFirstByActiveTrue().get().getTelegramAccountHash().equals(hash)) {
             return "Cuenta no vinculada.";
         }
-        String normalized = command == null ? "" : command.trim().toLowerCase(Locale.ROOT);
         return switch (normalized) {
             case "/ayuda", "ayuda" -> "Comandos disponibles: Ayuda, Resumen, Pendientes, Mes. Solo lectura.";
             case "/resumen", "resumen" -> "Resumen: " + complaints.count() + " quejas registradas.";

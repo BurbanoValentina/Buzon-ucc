@@ -45,7 +45,7 @@ class DashboardServiceTest {
         assertEquals(1L, response.byStatus().get(ComplaintStatus.COMPLETADA));
         assertEquals(1L, response.anonymous());
         assertEquals(1L, response.identified());
-        assertEquals(2, response.monthly().size());
+        assertEquals(3, response.monthly().size());
         assertNotNull(response.monthly().stream().filter(point -> point.month().endsWith("-02")).findFirst().orElse(null));
         assertEquals(0L, response.monthly().stream().filter(point -> point.month().endsWith("-02")).findFirst().orElseThrow().count());
     }

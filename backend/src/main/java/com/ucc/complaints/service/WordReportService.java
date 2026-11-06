@@ -14,6 +14,7 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class WordReportService {
     private final EvidenceRepository evidence;
     private final AuditService auditService;
 
+    @Autowired
     public WordReportService(ComplaintRepository complaints, WordReportDraftRepository drafts,
                              EvidenceRepository evidence, AuditService auditService) {
         this.complaints = complaints;

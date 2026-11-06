@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.any;
 
 @ExtendWith(MockitoExtension.class)
 class ReportAuditTest {
@@ -23,6 +24,8 @@ class ReportAuditTest {
     @Test
     void generationAndDownloadUseSafeAuditEvents() {
         when(complaints.findAll()).thenReturn(List.of());
+        when(drafts.save(any())).thenAnswer(invocation ->
+            invocation.getArgument(0));
         WordReportService service = new WordReportService(complaints, drafts, null, auditService);
 
         service.create(new ReportSelection(List.of(), null), "administrador");
