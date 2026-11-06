@@ -26,3 +26,17 @@ npm run test
 La IA usa `AI_PROVIDER=simulation` para desarrollo. Google Drive, Telegram y
 otros servicios externos no deben considerarse conectados sin configuración y
 una validación ejecutada.
+
+## Controles reproducibles
+
+```powershell
+cd backend
+mvn verify
+cd ..\frontend
+npm ci
+npm run lint
+npm test
+npm run build
+cd ..
+docker compose -f infra/compose.yaml --env-file infra/.env.example config
+```

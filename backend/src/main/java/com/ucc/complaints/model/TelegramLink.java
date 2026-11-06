@@ -12,5 +12,22 @@ public class TelegramLink {
     private String telegramAccountHash;
     private OffsetDateTime linkedAt;
     private boolean active;
+    private boolean notificationsEnabled = true;
+    private OffsetDateTime unlinkedAt;
     protected TelegramLink() { }
+    public TelegramLink(String telegramAccountHash, OffsetDateTime linkedAt) {
+        this.telegramAccountHash = telegramAccountHash;
+        this.linkedAt = linkedAt;
+        this.active = true;
+        this.notificationsEnabled = true;
+    }
+    public Long getId() { return id; }
+    public String getTelegramAccountHash() { return telegramAccountHash; }
+    public OffsetDateTime getLinkedAt() { return linkedAt; }
+    public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
+    public boolean isNotificationsEnabled() { return notificationsEnabled; }
+    public void setNotificationsEnabled(boolean notificationsEnabled) { this.notificationsEnabled = notificationsEnabled; }
+    public OffsetDateTime getUnlinkedAt() { return unlinkedAt; }
+    public void setUnlinkedAt(OffsetDateTime unlinkedAt) { this.unlinkedAt = unlinkedAt; }
 }
